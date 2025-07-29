@@ -1,0 +1,20 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "video-transcription"
+version = "0.1.0"
+description = "Generate SRT subtitles from video files using local AI transcription"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "openai-whisper>=20240930",
+    "ffmpeg-python>=0.2.0",
+    "click>=8.1.0",
+    "tqdm>=4.66.0",
+    "torch>=2.0.0",
+]
+
+[project.scripts]
+video-transcribe = "video_transcription.main:cli"
